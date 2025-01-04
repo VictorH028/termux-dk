@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Establece el fondo de pantalla
+sh ~/.fehbg &
+
+# Inicia un terminal Xfce
+xfce4-terminal &
+
+# ## xfce4-settings daemon
+xfsettingsd &
+#
+# ## Start Compositing Manager
+# ob-compositor --start &
+sleep 2
+
+# Lanzar Polybar
+sh ~/.config/polybar/launch.sh &
+
+# Thunar Daemon
+thunar --daemon &
+

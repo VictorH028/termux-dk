@@ -1,0 +1,14 @@
+#!/data/data/com.termux/files/usr/bin/sh
+## This file is executed during VNC server
+## startup.
+# xrdb $HOME/.Xresources 
+# xfce4-session &
+# bash ~/.config/polybar/launch.sh
+# Launch terminal emulator Aterm.
+# Requires package 'aterm'.
+# aterm -geometry 160x48+20+20 -ls &
+# Launch Openbox Window Manageropenbox-session
+openbox-session  &
+# Launch Tab Window Manager.
+# Requires package 'xorg-twm'.
+# startxfce4
