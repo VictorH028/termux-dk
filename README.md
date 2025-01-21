@@ -5,22 +5,10 @@
 
 # Desktop Styles 
 
-
-<details style ="font-size: larger">
-<summary><b style ="font-size: larger">Screenshots: </b></summary>
-
-|Menu|
-|--|
-|![img](images/openbox/look_0/menu.png)|
-
-</details>
-<br>
-
 ## 1. Nordic Openbox:
 ### Keybord shortcuts:- [Here](https://github.com/sabamdarif/termux-desktop/blob/main/see-more.md#openbox-keybindings-cheat-sheet)
 >Inspired from [adi1090x's termux-desktop](https://github.com/adi1090x/termux-desktop)
 
->My modifications to his style
 
 <details>
 <summary><b style ="font-size: small">Style Details: </summary>
@@ -48,9 +36,9 @@ Icon Used:
 
 | Apps | Dashboard |
 |:--:|:--:|
-| ![Apps](images/openbox/look_1/apps.png) | ![Dashboard](images/openbox/look_1/dashbord.png) |
+| ![Apps](.img/openbox/look_1/apps.png) | ![Dashboard](.img/openbox/look_1/dashbord.png) |
 | **Launcher** | **Powermenu**  |
-| ![Launcher](images/openbox/look_1/launcher.png) | ![Powermenu](images/openbox/look_1/powermenu.png) 
+| ![Launcher](.img/openbox/look_1/launcher.png) | ![Powermenu](.img/openbox/look_1/powermenu.png) 
 
 </details>
 
