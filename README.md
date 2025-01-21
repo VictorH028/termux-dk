@@ -29,7 +29,7 @@ Icon Used:
 </details>
 <br>
 
-<center><img src="images/openbox/look_1/desktop.png"></center>
+<center><img src=".img/openbox/look_1/desktop.png"></center>
 
 <details style ="font-size: larger">
 <summary><b style ="font-size: larger">Screenshots: </b></summary>
