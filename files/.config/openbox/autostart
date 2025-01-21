@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# 
+xrandr --pdi 120
+
 # Establece el fondo de pantalla
-sh ~/.fehbg &
+ exec ~/.fehbg &
 
 # Inicia un terminal Xfce
 xfce4-terminal &
