@@ -47,8 +47,7 @@ Icon Used:
 
 ```
 git clone https://github.com/VictorH028/termux-dk && cd termux-dk
-
-./setup2.sh 
+make
 ```
 
 # Start 
