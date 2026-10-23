@@ -74,18 +74,19 @@ vncserver :1
 
 # Warnings
 
-- **Resolution / DPI:** the default is `2400x1080` at `dpi=160`, matching a
+> [!WARNING]
+> **Resolution / DPI:** the default is `2400x1080` at `dpi=160`, matching a
   20:9 phone screen. If the VNC viewer still shows `1600x900`, close the viewer
   and restart the server with `vncserver -kill :1 && vncserver :1`.
-- If text looks too small or too large, change `dpi` in `~/.vnc/config`, the
+> If text looks too small or too large, change `dpi` in `~/.vnc/config`, the
   `Xft.dpi` value in `~/.config/openbox/autostart` and `dpi` in
   `~/.config/polybar/config.ini` (keep all three values equal).
-- With Termux:X11 the resolution is controlled by the Termux:X11 app settings,
+> With Termux:X11 the resolution is controlled by the Termux:X11 app settings,
   not by these files.
-- **CPU and temperature modules do not work on Android without root**, because
+> **CPU and temperature modules do not work on Android without root**, because
   `/proc/stat` and `/sys/class/thermal` are restricted. The bar uses an
   `uptime` module instead.
-- **Battery:** requires the Termux:API app. The scripts use a timeout so the
+> **Battery:** requires the Termux:API app. The scripts use a timeout so the
   bar does not freeze when the API is unavailable.
   
 
