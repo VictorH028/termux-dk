@@ -87,10 +87,7 @@ vncserver :1
   `uptime` module instead.
 - **Battery:** requires the Termux:API app. The scripts use a timeout so the
   bar does not freeze when the API is unavailable.
-- **Polybar tray** was removed because it is deprecated in Polybar 3.7. Use the
-  `internal/tray` module if you need tray icons.
-- After changing files from this repo, run `make` again or copy them to
-  `$HOME` and restart the session (`openbox --restart`).
+  
 
 
 > [!NOTE]
