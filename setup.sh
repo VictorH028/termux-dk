@@ -2,23 +2,50 @@
 
 set -e
 
-
 _pkgs=(bc bmon calcurse curl dbus desktop-file-utils exo feh fontconfig-utils fsmon \
-	geany git gtk2 gtk3 htop imagemagick jq leafpad man mpc mpd mutt ncmpcpp \
-	ncurses-utils netsurf obconf openbox openssl-tool polybar pulseaudio ranger rofi \
-	startup-notification termux-api termux-x11-nightly thunar tigervnc vim wget \
-	xarchiver xbitmaps xcompmgr xfce4-settings xfce4-terminal xmlstarlet \
-	xorg-font-util xorg-xrandr xorg-xrdb)
+        geany git gtk2 gtk3 htop imagemagick jq leafpad man mpc mpd mutt ncmpcpp \
+        ncurses-utils netsurf obconf openbox openssl-tool polybar pulseaudio ranger rofi \
+        startup-notification termux-api termux-x11-nightly thunar tigervnc vim wget \
+        xarchiver xbitmaps xcompmgr xfce4-settings xfce4-terminal xmlstarlet \
+        xorg-font-util xorg-xrandr xorg-xrdb)
 
-echo "[*] Refreshing font cache..."
-fc-cache -f >/dev/null 2>&1 || true
+echo -e "\e[1;34m[*] Iniciando configuración del entorno...\e[0m\n"
 
-# Copy config files
+spin -t "Instalando ${#_pkgs[@]} paquetes (esto tomará un momento)..." \
+     --style=dots \
+     --color=82 \
+     --cmd="apt install -y ${_pkgs[*]}" \
+     -q \
+     --result \
+     -s "Todos los paquetes base instalados" \
+     -e "Error durante la instalación de paquetes"
+
+# 3. Refrescar caché de fuentes
+echo ""
+spin -t "Refrescando caché de fuentes..." \
+     --style=dots \
+     --color=226 \
+     --cmd="fc-cache -f" \
+     -q \
+     --result \
+     -s "Caché de fuentes lista"
+
+# 4. Copiar archivos de configuración
+echo ""
 configs=($(ls -A $(pwd)/files))
 for _config in "${configs[@]}"; do
-    spin  -t "Copiyng $_config..." --cmd "cp -rf $(pwd)/files/$_config $HOME;"
+    spin -t "Copiando $_config..." \
+         --style=dots \
+         --color=208 \
+         --cmd="cp -rf $(pwd)/files/$_config $HOME;" \
+         -q \
+         --result \
+         -s "$_config copiado"
 done
+
 if [[ ! -d "$HOME/Desktop" ]]; then
-	mkdir $HOME/Desktop
+        mkdir -p $HOME/Desktop
 fi
+
+echo -e "\n\e[1;32m[*] ¡Instalación y configuración completadas exitosamente!\e[0m"
 
