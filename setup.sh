@@ -3,22 +3,24 @@
 set -e
 
 _pkgs=(bc bmon calcurse curl dbus desktop-file-utils exo feh fontconfig-utils fsmon \
-        geany git gtk2 gtk3 htop imagemagick jq leafpad man mpc mpd mutt ncmpcpp \
-        ncurses-utils netsurf obconf openbox openssl-tool polybar pulseaudio ranger rofi \
+        geany git gtk2 gtk3 htop imagemagick jq  man mpc mpd mutt ncmpcpp \
+        ncurses-utils netsurf  openbox openssl-tool polybar pulseaudio ranger rofi \
         startup-notification termux-api termux-x11-nightly thunar tigervnc vim wget \
         xarchiver xbitmaps xcompmgr xfce4-settings xfce4-terminal xmlstarlet \
         xorg-font-util xorg-xrandr xorg-xrdb)
 
 echo -e "\e[1;34m[*] Iniciando configuración del entorno...\e[0m\n"
 
-spin -t "Instalando ${#_pkgs[@]} paquetes (esto tomará un momento)..." \
-     --style=dots \
-     --color=82 \
-     --cmd="apt install -y ${_pkgs[*]}" \
-     -q \
-     --result \
-     -s "Todos los paquetes base instalados" \
-     -e "Error durante la instalación de paquetes"
+
+for pkgs in  ${_pkgs[@]}; do
+    spin -t "Instalando [ $pkgs ] ...." \
+        --color=82 \
+        --cmd="apt install -y $pkgs" \
+        -q \
+        --result \
+        -s "Instalando [$pkgs] "
+done
+
 
 # 3. Refrescar caché de fuentes
 echo ""
