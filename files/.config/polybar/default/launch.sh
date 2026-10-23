@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/data/data/com.termux/files/usr/bin/bash
 
 # Terminate already running bar instances
 killall -q polybar

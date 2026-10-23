@@ -1,24 +1,23 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 
-# 
-xrandr --pdi 120
+if command -v xrandr >/dev/null 2>&1; then
+	xrandr --dpi 160 >/dev/null 2>&1
+fi
 
-# Establece el fondo de pantalla
- exec ~/.fehbg &
+if command -v xrdb >/dev/null 2>&1; then
+	echo "Xft.dpi: 160" | xrdb -merge
+fi
 
-# Inicia un terminal Xfce
-xfce4-terminal &
+[ -x "$HOME/.fehbg" ] && "$HOME/.fehbg" &
 
-# ## xfce4-settings daemon
-xfsettingsd &
-#
-# ## Start Compositing Manager
-# ob-compositor --start &
-sleep 2
+command -v pulseaudio >/dev/null 2>&1 && pulseaudio --start --exit-idle-time=-1 >/dev/null 2>&1
+command -v xfsettingsd >/dev/null 2>&1 && xfsettingsd &
 
-# Lanzar Polybar
-sh ~/.config/polybar/launch.sh &
+# ~/.local/bin/ob-compositor --start &
 
-# Thunar Daemon
-thunar --daemon &
+sleep 1
 
+[ -x "$HOME/.config/polybar/launch.sh" ] && "$HOME/.config/polybar/launch.sh" &
+
+command -v thunar >/dev/null 2>&1 && thunar --daemon &
+command -v xfce4-terminal >/dev/null 2>&1 && xfce4-terminal &

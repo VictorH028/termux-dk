@@ -1,0 +1,17 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+if ! command -v mpc >/dev/null 2>&1; then
+	rofi -e "mpc is not installed" -theme "$HOME/.config/rofi/default/mpd.rasi"
+	exit 1
+fi
+
+theme="$HOME/.config/rofi/default/mpd.rasi"
+options="Toggle playback\nNext track\nPrevious track\nStop"
+chosen="$(printf '%b\n' "$options" | rofi -dmenu -p "MPD" -theme "$theme")"
+
+case "$chosen" in
+	"Toggle playback") mpc toggle ;;
+	"Next track") mpc next ;;
+	"Previous track") mpc prev ;;
+	"Stop") mpc stop ;;
+esac

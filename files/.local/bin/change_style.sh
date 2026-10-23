@@ -6,8 +6,8 @@
 dir="$HOME/.config/openbox/styles"
 
 # Lib
-if ! . "/data/data/com.termux/files/home/.local/lib/termux-ob/common/al-include.cfg" 2>/dev/null; then
-    echo $"Error: Failed to source /data/data/com.termux/files/home/.local/lib/termux-ob/common/al-include.cfg" >&2 ; exit 1
+if ! . "$HOME/.local/lib/termux-ob/common/al-include.cfg" 2>/dev/null; then
+    echo $"Error: Failed to source $HOME/.local/lib/termux-ob/common/al-include.cfg" >&2 ; exit 1
 fi
 
 # Styles

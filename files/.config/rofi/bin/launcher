@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/data/data/com.termux/files/usr/bin/bash
 
 # Available Styles
 # >> Styles Below Only Works With "rofi-git(AUR)", Tested On Version: 1.5.4-76-gca067234
@@ -9,7 +9,7 @@
 # Ribbon_Left_Round | Ribbon_Right | Ribbon_Right_Round | Ribbon_Top | Ribbon_Top_Round | Row_Bottom | Row_Center | Row_Dock | Row_Dropdown
 
 ## Default
-DIR="default"
+DIR="$HOME/.config/rofi/default"
 STYLE="launcher"
 
-rofi -no-lazy-grab -show drun -theme "$DIR"/"$STYLE".rasi
+rofi -no-lazy-grab -show drun -theme "$DIR/$STYLE.rasi"

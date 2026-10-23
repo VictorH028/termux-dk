@@ -11,12 +11,13 @@ all: check_key check_os run_setup
 
 # 
 check_key:
+	@mkdir -p $(PREFIX)/etc/apt/sources.list.d
 	@if [ -f $(FILE) ]; then \
-		echo " "; \
+		echo "Package repository already present."; \
 	else \
 		echo "Downloading from $(URL)..."; \
-		curl -o $(FILE) $(URL); \
-		echo "File  downloading."; \
+		curl -fsSL -o $(FILE) $(URL); \
+		echo "File downloaded."; \
 	fi
 
 # Verificar si el sistema operativo es Linux
@@ -35,4 +36,4 @@ run_setup:
 clean:
 	@echo "Remove..."
 
-.PHONY: all check_os run_setup
+.PHONY: all check_key check_os run_setup clean

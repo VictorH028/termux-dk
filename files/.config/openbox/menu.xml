@@ -24,9 +24,9 @@
 		</item>
 		<separator/>
 		<menu id="root-menu-srct" label="Terminal">
-			<item label="Neovim">
+			<item label="Vim">
 				<action name="Execute">
-					<execute>xfce4-terminal -e nvim</execute>
+					<execute>xfce4-terminal -e vim</execute>
 				</action>
 			</item>	
 			<item label="Htop">
@@ -63,7 +63,7 @@
 				</item>
 				<item label="Edit rc.xml">
 					<action name="Execute">
-						<command>nvim ~/.config/openbox/rc.xml</command>
+						<command>vim ~/.config/openbox/rc.xml</command>
 					</action>
 				</item>
 				<item label="Edit autostart">

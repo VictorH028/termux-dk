@@ -26,8 +26,8 @@ case "$@" in
     -h|--help) echo -e "$HELP" ; exit 0
 esac
 
-if ! . "/data/data/com.termux/files/home/.local/lib/termux-ob/common/al-include.cfg" 2> /dev/null; then
-    echo $"Error: Failed to locate /data/data/com.termux/files/home/.local/lib/termux-ob/common/al-include.cfg" >&2
+if ! . "$HOME/.local/lib/termux-ob/common/al-include.cfg" 2> /dev/null; then
+    echo $"Error: Failed to locate $HOME/.local/lib/termux-ob/common/al-include.cfg" >&2
     exit 1
 fi
 

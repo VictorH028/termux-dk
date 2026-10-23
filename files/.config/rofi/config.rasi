@@ -1,7 +1,7 @@
 configuration {
   show-icons:         true;
-  icon-theme:         "Hybrid";
-  terminal:			  "termite";
+  icon-theme:         "Arc";
+  terminal:			  "xfce4-terminal";
   cycle:              false;
   hide-scrollbar:     true;
   disable-history:    false;
